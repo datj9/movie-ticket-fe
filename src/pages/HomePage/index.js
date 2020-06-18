@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./style.less";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getTheatersStart } from "../../redux/theater/actions";
 import SearchMovieWithTheater from "../../components/SearchMovieWithTheater";
 
