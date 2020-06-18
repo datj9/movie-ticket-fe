@@ -26,7 +26,7 @@ const SearchMovieWithTheater = () => {
                 ))}
             </Select>
             
-            <Button size='large' type='primary' onClick={submitSearchForm} disabled={!theater || !movie}>
+            <Button size='large' type='primary' onClick={submitSearchForm} disabled={!theater}>
                 Tìm kiếm
             </Button>
         </form>
