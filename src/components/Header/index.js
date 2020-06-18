@@ -2,8 +2,11 @@ import React from "react";
 import "./style.less";
 import { NavLink } from "react-router-dom";
 import { Button } from "antd";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
+    const query = new URLSearchParams(useLocation().search);
+    console.log(query.get("name"));
     return (
         <div className='header'>
             <NavLink className='logo' to='/'>
