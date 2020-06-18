@@ -9,7 +9,7 @@ const HomePage = (props) => {
 
     useEffect(() => {
         dispatch(getTheatersStart());
-    }, []);
+    });
 
     return (
         <div className='home'>
