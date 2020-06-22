@@ -9,7 +9,7 @@ const SearchMovieWithTheater = () => {
     const [theater, setTheater] = useState("");
     const theaters = useSelector((state) => state.theater.theaters);
     const loadingTheaters = useSelector((state) => state.theater.isLoading);
-   
+
     const handleTheaterChange = (theaterName) => {
         setTheater(theaterName);
     };
@@ -25,8 +25,8 @@ const SearchMovieWithTheater = () => {
                     </Option>
                 ))}
             </Select>
-            
-            <Button size='large' type='primary' onClick={submitSearchForm} disabled={!theater}>
+
+            <Button size='large' type='primary' onClick={submitSearchForm}>
                 Tìm kiếm
             </Button>
         </form>
