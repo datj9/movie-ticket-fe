@@ -1,37 +1,48 @@
 import React from "react";
 import { Divider, Select, Dropdown, Menu, Button } from "antd";
 import { DownOutlined } from "@ant-design/icons";
+import "./style.less";
+import { Card } from "antd";
 
+const { Meta } = Card;
 const { Option } = Select;
 
 const MoviePage = () => {
-    const menu = (
-        <Menu>
-            <Menu.Item key='1'>All</Menu.Item>
-            <Menu.Item key='2'>Action</Menu.Item>
-            <Menu.Item key='3'>Horror</Menu.Item>
-        </Menu>
-    );
+    const allMovies = () => {
+        const movies = [];
+        for (let i = 0; i < 14; i++) {
+            movies.push(
+                <Card hoverable cover={<img alt='example' src='https://cdn.moveek.com/media/cache/short/5ecb42dc750fe602531221.jpg' />}>
+                    <Meta title='Latte & the Magic Waterstone' />
+                </Card>
+            );
+        }
+        return movies;
+    };
     return (
         <div className='movie-page'>
-            <div className='title'>List Of All Movies</div>
-            <Divider />
-            <div className='list-movies'>
-                <div className='movies-filter'>
-                    <Select size='large' defaultValue='Languages'>
-                        {["English", "Chinese", "Korean"].map((language) => (
-                            <Option key={language} value={language}>
-                                {language}
-                            </Option>
-                        ))}
-                    </Select>
-                    <Dropdown overlay={menu}>
-                        <Button>
-                            Genres <DownOutlined />
-                        </Button>
-                    </Dropdown>
+            <div className='container'>
+                <div className='title'>List Of All Movies</div>
+                <Divider />
+                <div className='list-movies'>
+                    <div className='movies-filter'>
+                        <Select defaultValue='Languages'>
+                            {["English", "Chinese", "Korean"].map((language) => (
+                                <Option key={language} value={language}>
+                                    {language}
+                                </Option>
+                            ))}
+                        </Select>
+                        <Select defaultValue='Genres'>
+                            {["All", "Action", "Comedy"].map((genre) => (
+                                <Option key={genre} value={genre}>
+                                    {genre}
+                                </Option>
+                            ))}
+                        </Select>
+                    </div>
+                    <div className='list-movies-container'>{allMovies()}</div>
                 </div>
-                <div className='list-movies-container'></div>
             </div>
         </div>
     );
