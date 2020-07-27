@@ -14,7 +14,9 @@ const HomePage = (props) => {
     return (
         <div className='home'>
             <div className='overlay'>
-                <SearchMovieWithTheater />
+                <div className='form-container'>
+                    <SearchMovieWithTheater />
+                </div>
             </div>
         </div>
     );

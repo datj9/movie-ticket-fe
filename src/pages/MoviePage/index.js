@@ -1,6 +1,5 @@
 import React from "react";
-import { Divider, Select, Dropdown, Menu, Button } from "antd";
-import { DownOutlined } from "@ant-design/icons";
+import { Divider, Select } from "antd";
 import "./style.less";
 import { Card } from "antd";
 
@@ -12,7 +11,12 @@ const MoviePage = () => {
         const movies = [];
         for (let i = 0; i < 14; i++) {
             movies.push(
-                <Card hoverable cover={<img alt='example' src='https://cdn.moveek.com/media/cache/short/5ecb42dc750fe602531221.jpg' />}>
+                <Card
+                    hoverable
+                    cover={
+                        <img alt='example' src='https://cdn.moveek.com/media/cache/short/5ecb42dc750fe602531221.jpg' />
+                    }
+                >
                     <Meta title='Latte & the Magic Waterstone' />
                 </Card>
             );

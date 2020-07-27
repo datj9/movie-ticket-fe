@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./style.less";
 import { useSelector } from "react-redux";
 import { Select } from "antd";
 import { Button } from "antd";
@@ -25,7 +26,10 @@ const SearchMovieWithTheater = () => {
                     </Option>
                 ))}
             </Select>
-
+            <Select size='large' defaultValue='Avenger'>
+                <Option>Start Wars</Option>
+                <Option>Avenger</Option>
+            </Select>
             <Button size='large' type='primary' onClick={submitSearchForm}>
                 Tìm kiếm
             </Button>
